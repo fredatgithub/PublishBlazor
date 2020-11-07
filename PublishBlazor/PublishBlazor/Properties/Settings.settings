@@ -15,16 +15,16 @@
       <Value Profile="(Default)">\\TargetServerName\PARTAGE\</Value>
     </Setting>
     <Setting Name="TargetServerName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">for confidentiality, don't publish it to GitHub</Value>
+      <Value Profile="(Default)">for confidentiality, don't publish it to a public GitHub repository</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">for confidentiality, don't publish it to GitHub</Value>
+      <Value Profile="(Default)">for confidentiality, don't publish it to a public GitHub repository</Value>
     </Setting>
     <Setting Name="ApplicationName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">for confidentiality, don't publish it to GitHub</Value>
+      <Value Profile="(Default)">for confidentiality, don't publish it to a public GitHub repository</Value>
     </Setting>
     <Setting Name="SecretMessage" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">for confidentiality, don't publish it to GitHub</Value>
+      <Value Profile="(Default)">for confidentiality, don't publish it to a public GitHub repository</Value>
     </Setting>
   </Settings>
 </SettingsFile>

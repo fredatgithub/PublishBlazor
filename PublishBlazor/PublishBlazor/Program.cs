@@ -16,7 +16,8 @@ namespace PublishBlazor
       string targetServerName = Properties.Settings.Default.TargetServerName;
       string userName = Properties.Settings.Default.UserName;
       string applicationName = Properties.Settings.Default.ApplicationName;
-      if (applicationName == "for confidentiality, don't publish it to GitHub")
+      string secretPhrase = Properties.Settings.Default.SecretMessage;
+      if (applicationName == secretPhrase)
       {
         display("Type the name of the application: ");
         applicationName = Console.ReadLine();
@@ -29,7 +30,7 @@ namespace PublishBlazor
         webServerPublishSourcePath = webServerPublishSourcePath.Replace("UserName", userName);
       }
 
-      if (targetServerName == "for confidentiality, don't publish it to GitHub")
+      if (targetServerName == secretPhrase)
       {
         display("Type the name of the target server name: ");
         targetServerName = Console.ReadLine();
@@ -39,7 +40,7 @@ namespace PublishBlazor
 
       }
 
-      if (userName == "for confidentiality, don't publish it to GitHub")
+      if (userName == secretPhrase)
       {
         display("Type the name of the user: ");
         userName = Console.ReadLine();

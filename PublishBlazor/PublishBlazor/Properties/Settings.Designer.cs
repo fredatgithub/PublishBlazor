@@ -63,7 +63,7 @@ namespace PublishBlazor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to GitHub")]
+        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to a public GitHub repository")]
         public string TargetServerName {
             get {
                 return ((string)(this["TargetServerName"]));
@@ -72,7 +72,7 @@ namespace PublishBlazor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to GitHub")]
+        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to a public GitHub repository")]
         public string UserName {
             get {
                 return ((string)(this["UserName"]));
@@ -81,7 +81,7 @@ namespace PublishBlazor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to GitHub")]
+        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to a public GitHub repository")]
         public string ApplicationName {
             get {
                 return ((string)(this["ApplicationName"]));
@@ -90,7 +90,7 @@ namespace PublishBlazor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to GitHub")]
+        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to a public GitHub repository")]
         public string SecretMessage {
             get {
                 return ((string)(this["SecretMessage"]));
