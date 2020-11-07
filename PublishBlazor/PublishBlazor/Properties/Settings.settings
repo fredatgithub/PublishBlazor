@@ -2,11 +2,29 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PublishBlazor.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="APIServerPublishPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
+    <Setting Name="apiServerPublishSourcePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Users\UserName\source\repos\ApplicationName\Hermes\Hermes\bin\Release\netcoreapp3.1\publish</Value>
     </Setting>
-    <Setting Name="WebServerPublishPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
+    <Setting Name="webServerPublishSourcePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Users\UserName\source\repos\ApplicationName\Hermes\HermesWeb\bin\Release\netcoreapp3.1\publish</Value>
+    </Setting>
+    <Setting Name="apiServerPublishTargetPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\TargetServerName\PARTAGE\</Value>
+    </Setting>
+    <Setting Name="webServerPublishTargetPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\TargetServerName\PARTAGE\</Value>
+    </Setting>
+    <Setting Name="TargetServerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">for confidentiality, don't publish it to GitHub</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">for confidentiality, don't publish it to GitHub</Value>
+    </Setting>
+    <Setting Name="ApplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">for confidentiality, don't publish it to GitHub</Value>
+    </Setting>
+    <Setting Name="SecretMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">for confidentiality, don't publish it to GitHub</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -25,19 +25,75 @@ namespace PublishBlazor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string APIServerPublishPath {
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\UserName\\source\\repos\\ApplicationName\\Hermes\\Hermes\\bin\\Release\\netcorea" +
+            "pp3.1\\publish")]
+        public string apiServerPublishSourcePath {
             get {
-                return ((string)(this["APIServerPublishPath"]));
+                return ((string)(this["apiServerPublishSourcePath"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string WebServerPublishPath {
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\UserName\\source\\repos\\ApplicationName\\Hermes\\HermesWeb\\bin\\Release\\netco" +
+            "reapp3.1\\publish")]
+        public string webServerPublishSourcePath {
             get {
-                return ((string)(this["WebServerPublishPath"]));
+                return ((string)(this["webServerPublishSourcePath"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\TargetServerName\\PARTAGE\\")]
+        public string apiServerPublishTargetPath {
+            get {
+                return ((string)(this["apiServerPublishTargetPath"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\TargetServerName\\PARTAGE\\")]
+        public string webServerPublishTargetPath {
+            get {
+                return ((string)(this["webServerPublishTargetPath"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to GitHub")]
+        public string TargetServerName {
+            get {
+                return ((string)(this["TargetServerName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to GitHub")]
+        public string UserName {
+            get {
+                return ((string)(this["UserName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to GitHub")]
+        public string ApplicationName {
+            get {
+                return ((string)(this["ApplicationName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("for confidentiality, don\'t publish it to GitHub")]
+        public string SecretMessage {
+            get {
+                return ((string)(this["SecretMessage"]));
             }
         }
     }
