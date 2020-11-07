@@ -9,10 +9,10 @@
       <Value Profile="(Default)">C:\Users\UserName\source\repos\ApplicationName\Hermes\HermesWeb\bin\Release\netcoreapp3.1\publish</Value>
     </Setting>
     <Setting Name="apiServerPublishTargetPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\TargetServerName\PARTAGE\</Value>
+      <Value Profile="(Default)">\\TargetServerName\PARTAGE\API\</Value>
     </Setting>
     <Setting Name="webServerPublishTargetPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\TargetServerName\PARTAGE\</Value>
+      <Value Profile="(Default)">\\TargetServerName\PARTAGE\WEB\</Value>
     </Setting>
     <Setting Name="TargetServerName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">for confidentiality, don't publish it to a public GitHub repository</Value>

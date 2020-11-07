@@ -45,7 +45,7 @@ namespace PublishBlazor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\TargetServerName\\PARTAGE\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\TargetServerName\\PARTAGE\\API\\")]
         public string apiServerPublishTargetPath {
             get {
                 return ((string)(this["apiServerPublishTargetPath"]));
@@ -54,7 +54,7 @@ namespace PublishBlazor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\TargetServerName\\PARTAGE\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\TargetServerName\\PARTAGE\\WEB\\")]
         public string webServerPublishTargetPath {
             get {
                 return ((string)(this["webServerPublishTargetPath"]));

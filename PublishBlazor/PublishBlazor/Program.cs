@@ -17,12 +17,12 @@ namespace PublishBlazor
       string userName = Properties.Settings.Default.UserName;
       string applicationName = Properties.Settings.Default.ApplicationName;
       string secretPhrase = Properties.Settings.Default.SecretMessage;
-      if (applicationName == secretPhrase)
+      if (userName == secretPhrase)
       {
-        display("Type the name of the application: ");
-        applicationName = Console.ReadLine();
-        apiServerPublishSourcePath = apiServerPublishSourcePath.Replace("UserName", applicationName);
-        webServerPublishSourcePath = webServerPublishSourcePath.Replace("UserName", applicationName);
+        display("Type the name of the user: ");
+        userName = Console.ReadLine();
+        apiServerPublishSourcePath = apiServerPublishSourcePath.Replace("UserName", userName);
+        webServerPublishSourcePath = webServerPublishSourcePath.Replace("UserName", userName);
       }
       else
       {
@@ -30,34 +30,82 @@ namespace PublishBlazor
         webServerPublishSourcePath = webServerPublishSourcePath.Replace("UserName", userName);
       }
 
+      if (applicationName == secretPhrase)
+      {
+        display("Type the name of the application: ");
+        applicationName = Console.ReadLine();
+        apiServerPublishSourcePath = apiServerPublishSourcePath.Replace("ApplicationName", applicationName);
+        webServerPublishSourcePath = webServerPublishSourcePath.Replace("ApplicationName", applicationName);
+      }
+      else
+      {
+        apiServerPublishSourcePath = apiServerPublishSourcePath.Replace("ApplicationName", applicationName);
+        webServerPublishSourcePath = webServerPublishSourcePath.Replace("ApplicationName", applicationName);
+      }
+
       if (targetServerName == secretPhrase)
       {
-        display("Type the name of the target server name: ");
+        display("Type the name of the target server name, you want to deploy to: ");
         targetServerName = Console.ReadLine();
+        apiServerPublishTargetPath = apiServerPublishTargetPath.Replace("TargetServerName", targetServerName);
+        webServerPublishTargetPath = webServerPublishTargetPath.Replace("TargetServerName", targetServerName);
       }
       else
       {
-
-      }
-
-      if (userName == secretPhrase)
-      {
-        display("Type the name of the user: ");
-        userName = Console.ReadLine();
-      }
-      else
-      {
-
+        apiServerPublishTargetPath = apiServerPublishTargetPath.Replace("TargetServerName", targetServerName);
+        webServerPublishTargetPath = webServerPublishTargetPath.Replace("TargetServerName", targetServerName);
       }
 
 
       // delete *.pdb
-      // copy file to target directories
       string pattern = "*.pdb";
-      string[] files;
-      if (Directory.Exists(apiServerPublishSourcePath))
+      DeleteFiles(pattern, apiServerPublishSourcePath);
+      DeleteFiles(pattern, webServerPublishSourcePath);
+
+      // copy files to target directories
+      Copyfiles(apiServerPublishSourcePath, apiServerPublishTargetPath);
+      Copyfiles(webServerPublishSourcePath, webServerPublishTargetPath);
+
+
+      display("Press any key to exit:");
+      Console.ReadKey();
+    }
+
+    private static void Copyfiles(string sourcePath, string targetPath, bool overwrite = true)
+    {
+      if (!Directory.Exists(sourcePath))
       {
-        files = Directory.GetFiles(apiServerPublishSourcePath, pattern, SearchOption.AllDirectories);
+        return;
+      }
+
+      //if (!Directory.Exists(targetPath))
+      //{
+      //  return;
+      //}
+
+      string[] sourceFiles;
+      sourceFiles = Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories);
+      
+      foreach (var fileName in sourceFiles)
+      {
+        string targetFileName = Path.Combine(targetPath, Path.GetFileName(fileName));
+        try
+        {
+          //File.Copy(fileName, targetFileName, overwrite);
+        }
+        catch (Exception exception)
+        {
+          Console.WriteLine($"There was an exception while trying to copy the file {fileName} to the target {targetFileName}. The exception is {exception.Message}");
+        }
+      }
+    }
+
+    private static void DeleteFiles(string pattern, string filePath)
+    {
+      string[] files;
+      if (Directory.Exists(filePath))
+      {
+        files = Directory.GetFiles(filePath, pattern, SearchOption.AllDirectories);
         foreach (var fileName in files)
         {
           if (File.Exists(fileName))
@@ -68,14 +116,11 @@ namespace PublishBlazor
             }
             catch (Exception exception)
             {
-              display($"Exception: {exception.Message}");
+              Console.WriteLine($"There was an exception while trying to delete PDB files: {exception.Message}");
             }
           }
         }
       }
-
-      display("Press any key to exit:");
-      Console.ReadKey();
     }
   }
 }
