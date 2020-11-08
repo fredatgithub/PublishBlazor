@@ -26,5 +26,8 @@
     <Setting Name="SecretMessage" Type="System.String" Scope="Application">
       <Value Profile="(Default)">for confidentiality, don't publish it to a public GitHub repository</Value>
     </Setting>
+    <Setting Name="XMLFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FileLastCopiedDate.xml</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

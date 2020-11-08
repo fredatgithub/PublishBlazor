@@ -75,23 +75,39 @@ namespace PublishBlazor
     {
       if (!Directory.Exists(sourcePath))
       {
+        Console.WriteLine($"The source path doesn't exist: {sourcePath}");
         return;
       }
 
-      //if (!Directory.Exists(targetPath))
-      //{
-      //  return;
-      //}
+      if (!Directory.Exists(targetPath))
+      {
+        Console.WriteLine($"The target path doesn't exist: {targetPath}");
+        return;
+      }
 
       string[] sourceFiles;
       sourceFiles = Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories);
-      
+      int sourcePathLength = sourcePath.Length;
+      bool fileHasChanged = true;
+      if (!File.Exists(Properties.Settings.Default.XMLFileName))
+      {
+        //create the xml file TODO
+      }
+
       foreach (var fileName in sourceFiles)
       {
-        string targetFileName = Path.Combine(targetPath, Path.GetFileName(fileName));
+        string afterPublishString = fileName.Substring(sourcePathLength+1, fileName.Length - sourcePathLength-1);
+        string targetFileName = targetPath + afterPublishString;
         try
         {
-          //File.Copy(fileName, targetFileName, overwrite);
+          // check if file has changed before copying with an xml file
+          fileHasChanged = true;
+
+          if (fileHasChanged)
+          {
+            File.Copy(fileName, targetFileName, overwrite);
+          }
+          
         }
         catch (Exception exception)
         {

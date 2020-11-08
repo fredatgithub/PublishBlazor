@@ -96,5 +96,14 @@ namespace PublishBlazor.Properties {
                 return ((string)(this["SecretMessage"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("FileLastCopiedDate.xml")]
+        public string XMLFileName {
+            get {
+                return ((string)(this["XMLFileName"]));
+            }
+        }
     }
 }
