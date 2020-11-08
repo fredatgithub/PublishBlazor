@@ -101,7 +101,22 @@ namespace PublishBlazor
         try
         {
           // check if file has changed before copying with an xml file
-          fileHasChanged = true;
+          fileHasChanged = true; // default value
+          FileInfo sourceFileInfo = new FileInfo(fileName);
+          FileInfo targetFileInfo = new FileInfo(targetFileName);
+          if (sourceFileInfo.LastAccessTime == targetFileInfo.LastAccessTime)
+          {
+            fileHasChanged = false;
+          }
+
+          if (sourceFileInfo.LastAccessTime > targetFileInfo.LastAccessTime)
+          {
+            fileHasChanged = true;
+          }
+          else
+          {
+            fileHasChanged = false;
+          }
 
           if (fileHasChanged)
           {
