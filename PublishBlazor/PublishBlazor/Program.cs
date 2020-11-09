@@ -66,7 +66,7 @@ namespace PublishBlazor
       Copyfiles(apiServerPublishSourcePath, apiServerPublishTargetPath);
       Copyfiles(webServerPublishSourcePath, webServerPublishTargetPath);
 
-
+      display("Files have been copied to target directories");
       display("Press any key to exit:");
       Console.ReadKey();
     }
@@ -120,6 +120,11 @@ namespace PublishBlazor
 
           if (fileHasChanged)
           {
+            if (!Directory.Exists(Path.GetDirectoryName(targetFileName)))
+            {
+              Directory.CreateDirectory(Path.GetDirectoryName(targetFileName));
+            }
+
             File.Copy(fileName, targetFileName, overwrite);
           }
           
