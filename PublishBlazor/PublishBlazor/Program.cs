@@ -56,6 +56,10 @@ namespace PublishBlazor
         webServerPublishTargetPath = webServerPublishTargetPath.Replace("TargetServerName", targetServerName);
       }
 
+      display($"Répertoire source API :{apiServerPublishSourcePath}");
+      display($"Répertoire source WEB :{webServerPublishSourcePath}");
+      display($"Répertoire cible API :{apiServerPublishTargetPath}");
+      display($"Répertoire cible WEB :{webServerPublishTargetPath}");
 
       // delete *.pdb
       string pattern = "*.pdb";
