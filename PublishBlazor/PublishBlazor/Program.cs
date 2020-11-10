@@ -70,6 +70,7 @@ namespace PublishBlazor
       Copyfiles(apiServerPublishSourcePath, apiServerPublishTargetPath);
       Copyfiles(webServerPublishSourcePath, webServerPublishTargetPath);
 
+      Console.ForegroundColor = ConsoleColor.White;
       display("Files have been copied to target directories");
       display("Press any key to exit:");
       Console.ReadKey();
@@ -129,12 +130,15 @@ namespace PublishBlazor
               Directory.CreateDirectory(Path.GetDirectoryName(targetFileName));
             }
 
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"The file {targetFileName} has been copied");
             File.Copy(fileName, targetFileName, overwrite);
           }
           
         }
         catch (Exception exception)
         {
+          Console.ForegroundColor = ConsoleColor.Red;
           Console.WriteLine($"There was an exception while trying to copy the file {fileName} to the target {targetFileName}. The exception is {exception.Message}");
         }
       }
@@ -153,9 +157,12 @@ namespace PublishBlazor
             try
             {
               File.Delete(fileName);
+              Console.ForegroundColor = ConsoleColor.Red;
+              Console.WriteLine($"The file: {fileName} has been deleted.");
             }
             catch (Exception exception)
             {
+              Console.ForegroundColor = ConsoleColor.Red;
               Console.WriteLine($"There was an exception while trying to delete PDB files: {exception.Message}");
             }
           }
