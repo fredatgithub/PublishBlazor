@@ -5,7 +5,7 @@ namespace PublishBlazor
 {
   class Program
   {
-    static void Main(string[] arguments)
+    static void Main()
     {
       Action<string> display = Console.WriteLine;
       display("Publication d'une application blazor");
@@ -56,7 +56,6 @@ namespace PublishBlazor
         webServerPublishTargetPath = webServerPublishTargetPath.Replace("TargetServerName", targetServerName);
       }
 
-
       // delete *.pdb
       string pattern = "*.pdb";
       DeleteFiles(pattern, apiServerPublishSourcePath);
@@ -89,14 +88,10 @@ namespace PublishBlazor
       sourceFiles = Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories);
       int sourcePathLength = sourcePath.Length;
       bool fileHasChanged = true;
-      if (!File.Exists(Properties.Settings.Default.XMLFileName))
-      {
-        //create the xml file TODO
-      }
 
       foreach (var fileName in sourceFiles)
       {
-        string afterPublishString = fileName.Substring(sourcePathLength+1, fileName.Length - sourcePathLength-1);
+        string afterPublishString = fileName.Substring(sourcePathLength + 1, fileName.Length - sourcePathLength - 1);
         string targetFileName = targetPath + afterPublishString;
         try
         {
@@ -127,7 +122,6 @@ namespace PublishBlazor
 
             File.Copy(fileName, targetFileName, overwrite);
           }
-          
         }
         catch (Exception exception)
         {
